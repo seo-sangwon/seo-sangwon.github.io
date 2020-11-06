@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test.html</title>
+        <script src="./js/jquery-1.11.3.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#addElement").click(function(){
+                $(document.body).css("background", "blue");
+                $("<div><p>제이쿼리</p></div>").appendTo(this); //내부 추가
+                $(this).after("<div><p>제이쿼리</p></div>"); //외부 추가
+                var count = $("div").length;
+                alert("div태그의 개수는" + count + "개 입니다.");
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <button id="addElement">동적으로 돔 엘리먼트 추가하기</button>
+    </body>
+</html>
